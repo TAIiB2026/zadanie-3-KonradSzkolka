@@ -1,6 +1,12 @@
 <div class="custom-data-list">
   <h1>Lista obiektów</h1>
 
+  <button type="button" (click)="toggleForm()">
+    {{ showForm ? 'Ukryj formularz' : 'Pokaż formularz' }}
+  </button>
+
+  <app-custom-data-form *ngIf="showForm" (addItem)="onAdd($event)"></app-custom-data-form>
+
   <table class="data-table">
     <thead>
       <tr>
