@@ -1,0 +1,28 @@
+<div class="custom-data-list">
+  <h1>Lista obiektów</h1>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Kwota</th>
+        <th>Data</th>
+        <th>Opis</th>
+        <th>Akcje</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{ item.id }}</td>
+        <td>{{ item.amount }}</td>
+        <td>{{ item.date | date: 'yyyy-MM-dd' }}</td>
+        <td>{{ item.description }}</td>
+        <td>
+          <button type="button" (click)="remove(item.id)">Usuń</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="items.length === 0">Brak danych do wyświetlenia.</p>
+</div>
